@@ -1,0 +1,24 @@
+<div class="container">
+
+    <div class="row">
+        {% for post in final_posting %}
+        <div class="col-sm-4 mb-2">
+            <div class="card" style="width: 18rem;">
+                <a href="{{ post.1 }}"><img class="card-img-top" src="{{ post.3 }}" alt="Card image cap"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.0 }}</h5>
+                    <p class="card-text">{{ post.2 }}</p>
+                    <a href="{{ post.1 }}" class="text-primary">Details</a>
+                </div>
+            </div>
+        </div>
+         {% endfor %}
+    </div>
+
+
+
+{#        {{ post.1 }}#}
+{#        #}
+{#        {{ '' }}#}
+
+</div>

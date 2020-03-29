@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+        input[type=search]:focus {
+            box-shadow: 0 1px 0px  rgba(0, 0, 0, 0.075) !important;
+            padding: 3px 0px 3px 3px;
+            margin: 5px 1px 3px 0px;
+            border: 1px solid #DC3545;
+        }
+    </style>
+
+    <div class="container">
+
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="search" style="border-left: none;border-top: none;border-right: none" class="form-control "
+                       id="exampleInputEmail1" name="search-item" aria-describedby="emailHelp" placeholder="search">
+            </div>
+
+            <button type="submit" class="btn btn-info">search</button>
+
+        </form>
+
+    </div>
+
+    {% if search %}
+    <h3 class="text-center text-info">{{ search | title }}</h3>
+    {% endif %}
+
+    {% include 'test_app/search_list.html' %}
+
+
+{% endblock %}
+
